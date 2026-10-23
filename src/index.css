@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimized base font sizing for 100% zoom */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Standard desktop (1366x768 and above) */
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Container width optimization */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Ensure consistent spacing */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Ensure all components inherit dark mode properly */
+.dark * {
+  border-color: rgb(55 65 81) !important;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800 !important;
+}
+
+.dark .text-gray-900 {
+  @apply text-white !important;
+}
+
+.dark .text-gray-700 {
+  @apply text-gray-300 !important;
+}
+
+.dark .text-gray-600 {
+  @apply text-gray-400 !important;
+}
+
+.dark .border-gray-200 {
+  @apply border-gray-700 !important;
+}
+
+.dark .border-gray-300 {
+  @apply border-gray-600 !important;
+}
+
+.dark .bg-gray-50 {
+  @apply bg-gray-700 !important;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-600 !important;
+}
+
+/* ==========================================================================
+   Compact Mode Styles
+   Visually reduces padding, margins, and component heights for denser layouts
+   ========================================================================== */
+html.compact {
+  font-size: 14.5px;
+}
+
+.compact main {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.compact .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.85rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(0.85rem * var(--tw-space-y-reverse)) !important;
+}
+
+.compact .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.1rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(1.1rem * var(--tw-space-y-reverse)) !important;
+}
+
+.compact .p-6 {
+  padding: 1.1rem !important;
+}
+
+.compact .p-4 {
+  padding: 0.75rem !important;
+}
+
+.compact .gap-6 {
+  gap: 1rem !important;
+}
+
+.compact .gap-4 {
+  gap: 0.75rem !important;
+}
+
+/* ==========================================================================
+   Theme Accent Colors
+   Overrides primary button, border, and focus ring accents based on user theme
+   ========================================================================== */
+/* Orange Theme */
+[data-theme="orange"] .bg-blue-600 {
+  background-color: #ea580c !important;
+}
+[data-theme="orange"] .hover\:bg-blue-700:hover {
+  background-color: #c2410c !important;
+}
+[data-theme="orange"] .text-blue-600 {
+  color: #ea580c !important;
+}
+[data-theme="orange"] .border-blue-600 {
+  border-color: #ea580c !important;
+}
+[data-theme="orange"] .focus\:ring-blue-500:focus {
+  --tw-ring-color: #f97316 !important;
+}
+
+/* Green Theme */
+[data-theme="green"] .bg-blue-600 {
+  background-color: #16a34a !important;
+}
+[data-theme="green"] .hover\:bg-blue-700:hover {
+  background-color: #15803d !important;
+}
+[data-theme="green"] .text-blue-600 {
+  color: #16a34a !important;
+}
+[data-theme="green"] .border-blue-600 {
+  border-color: #16a34a !important;
+}
+[data-theme="green"] .focus\:ring-blue-500:focus {
+  --tw-ring-color: #22c55e !important;
+}
+
+/* Purple Theme */
+[data-theme="purple"] .bg-blue-600 {
+  background-color: #9333ea !important;
+}
+[data-theme="purple"] .hover\:bg-blue-700:hover {
+  background-color: #7e22ce !important;
+}
+[data-theme="purple"] .text-blue-600 {
+  color: #9333ea !important;
+}
+[data-theme="purple"] .border-blue-600 {
+  border-color: #9333ea !important;
+}
+[data-theme="purple"] .focus\:ring-blue-500:focus {
+  --tw-ring-color: #a855f7 !important;
+}
+
+/* Red Theme */
+[data-theme="red"] .bg-blue-600 {
+  background-color: #dc2626 !important;
+}
+[data-theme="red"] .hover\:bg-blue-700:hover {
+  background-color: #b91c1c !important;
+}
+[data-theme="red"] .text-blue-600 {
+  color: #dc2626 !important;
+}
+[data-theme="red"] .border-blue-600 {
+  border-color: #dc2626 !important;
+}
+[data-theme="red"] .focus\:ring-blue-500:focus {
+  --tw-ring-color: #ef4444 !important;
+}
+
+/* Pink Theme */
+[data-theme="pink"] .bg-blue-600 {
+  background-color: #db2777 !important;
+}
+[data-theme="pink"] .hover\:bg-blue-700:hover {
+  background-color: #be185d !important;
+}
+[data-theme="pink"] .text-blue-600 {
+  color: #db2777 !important;
+}
+[data-theme="pink"] .border-blue-600 {
+  border-color: #db2777 !important;
+}
+[data-theme="pink"] .focus\:ring-blue-500:focus {
+  --tw-ring-color: #ec4899 !important;
+}
